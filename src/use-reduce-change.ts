@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import equals from 'shallowequal';
 
 export function useReduceChange<V, A>(
-  reduce: (acc: A, next: V, prev: V) => A,
+  reduce: (acc: A, curr: V, prev: V) => A,
   acc: A | (() => A),
   value: V,
   deps?: any[]
@@ -11,7 +11,7 @@ export function useReduceChange<V, A>(
   const prevAccRef = useRef(getAcc(acc));
   const prevDepsRef = useRef(deps);
 
-  const nextAcc = !equals(prevDepsRef.current, deps)
+  const currAcc = !equals(prevDepsRef.current, deps)
     ? getAcc(acc)
     : prevValueRef.current !== value
     ? reduce(prevAccRef.current, value, prevValueRef.current)
@@ -19,11 +19,11 @@ export function useReduceChange<V, A>(
 
   useEffect(() => {
     prevValueRef.current = value;
-    prevAccRef.current = nextAcc;
+    prevAccRef.current = currAcc;
     prevDepsRef.current = deps;
   });
 
-  return nextAcc;
+  return currAcc;
 }
 
 function getAcc(acc: any | (() => any)) {
