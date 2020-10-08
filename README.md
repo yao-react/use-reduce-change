@@ -2,9 +2,9 @@
 
 React hook to reduce value changes.
 
-## Philosophy
+## Features
 
-Effect as state.
+- [value hook](https://www.yuque.com/zhaoyao91/chat-about-react/bgcn53)
 
 ## Install
 
