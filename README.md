@@ -37,11 +37,12 @@ const Demo = () => {
 | name    | type                     | required | description |
 | ------- | ------------------------ | -------- | ----------- |
 | reducer | (acc, curr, prev) => acc | true     |             |
-| acc     | any \| () => any         | true     |             |
+| acc     | any                      | true     |             |
 | value   | any                      | true     |             |
+| deps    | any[]                    | false    |             |
 
 ## More words
 
 - In the first run of render it will just return the `acc`, since there is no change of value, that is to say, the `reduce`
-function will only run in the next run of render. 
+  function will only run in the next run of render.
 - If the `deps` changed in a run of render, it will behave just as the current run is the first run of render.

@@ -3,16 +3,16 @@ import equals from 'shallowequal';
 
 export function useReduceChange<V, A>(
   reduce: (acc: A, curr: V, prev: V) => A,
-  acc: A | (() => A),
+  acc: A,
   value: V,
   deps?: any[]
 ) {
   const prevValueRef = useRef(value);
-  const prevAccRef = useRef(getAcc(acc));
+  const prevAccRef = useRef(acc);
   const prevDepsRef = useRef(deps);
 
   const currAcc = !equals(prevDepsRef.current, deps)
-    ? getAcc(acc)
+    ? acc
     : prevValueRef.current !== value
     ? reduce(prevAccRef.current, value, prevValueRef.current)
     : prevAccRef.current;
@@ -24,8 +24,4 @@ export function useReduceChange<V, A>(
   });
 
   return currAcc;
-}
-
-function getAcc(acc: any | (() => any)) {
-  return typeof acc === 'function' ? acc() : acc;
 }
