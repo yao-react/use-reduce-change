@@ -2,10 +2,6 @@
 
 React hook to reduce value changes.
 
-## Features
-
-- [value hook](https://www.yuque.com/zhaoyao91/chat-about-react/bgcn53)
-
 ## Install
 
 ```
