@@ -1,6 +1,6 @@
 {
   "name": "@yao-react/use-reduce-change",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React hook to reduce value changes.",
   "author": "zhaoyao91",
   "license": "MIT",
