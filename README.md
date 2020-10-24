@@ -19,7 +19,7 @@ const Demo = () => {
   const [index, setIndex] = useState(0);
   const count = useReduceChange(
     (acc, curr, prev) => acc + curr + prev, // reducer
-    0, // acc
+    0, // initAcc
     index // value
   );
   return (
@@ -37,7 +37,7 @@ const Demo = () => {
 | name    | type                     | required | description |
 | ------- | ------------------------ | -------- | ----------- |
 | reducer | (acc, curr, prev) => acc | true     |             |
-| acc     | any                      | true     |             |
+| initAcc     | any                      | true     |             |
 | value   | any                      | true     |             |
 | deps    | any[]                    | false    |             |
 

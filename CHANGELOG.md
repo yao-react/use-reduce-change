@@ -1,5 +1,11 @@
 # @yao-react/use-reduce-change
 
+## 0.2.1
+
+### Patch Changes
+
+- rename arg acc to initAcc
+
 ## 0.2.0
 
 ### Minor Changes
