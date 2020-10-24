@@ -14,7 +14,7 @@ export const UseReduceChange = () => {
   const [dep, setDep] = useState(0);
   const [count, currIndex, prevIndex] = useReduceChange(
     (acc, a, b) => [acc[0] + a, a, b],
-    () => [-1, -1, -1],
+    [-1, -1, -1],
     index,
     [dep]
   );

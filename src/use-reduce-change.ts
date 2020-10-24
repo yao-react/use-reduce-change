@@ -21,7 +21,7 @@ export function useReduceChange<V, A>(
     prevValueRef.current = value;
     prevAccRef.current = currAcc;
     prevDepsRef.current = deps;
-  });
+  }, [value, currAcc, ...(deps ?? [])]);
 
   return currAcc;
 }
