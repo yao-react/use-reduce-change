@@ -18,7 +18,7 @@ yarn add @yao-react/use-reduce-change
 const Demo = () => {
   const [index, setIndex] = useState(0);
   const count = useReduceChange(
-    (acc, curr, prev) => acc + curr + prev, // reducer
+    (acc, curr, prev) => acc + curr + prev, // reduce
     0, // initAcc
     index // value
   );
@@ -36,8 +36,8 @@ const Demo = () => {
 
 | name    | type                     | required | description |
 | ------- | ------------------------ | -------- | ----------- |
-| reducer | (acc, curr, prev) => acc | true     |             |
-| initAcc     | any                      | true     |             |
+| reduce  | (acc, curr, prev) => acc | true     |             |
+| initAcc | any                      | true     |             |
 | value   | any                      | true     |             |
 | deps    | any[]                    | false    |             |
 
